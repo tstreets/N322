@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-button 
+    class="btn" 
+    expand="block" 
+    fill="outline"
+    routerLink="/second-page"
+    routerDirection="forward"
+  >Click Me</ion-button>
+
+  <ion-list>
+    <ion-item (click)="personClicked(person)" *ngFor="let person of data?.Names"> 
+      {{ person?.firstname }} {{ person?.lastname }}
+    </ion-item>
+  </ion-list>
+</ion-content>

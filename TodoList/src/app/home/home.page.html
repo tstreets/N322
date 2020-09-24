@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Todo List App
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="addTodoList()">
+        <ion-icon slot="icon-only" name="add-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list lines="none">
+    <ion-item-sliding *ngFor="let todolist of dataService.todolists">
+      <ion-item routerLink="/detail/{{todolist.id}}" routerDirection="forward">
+        <ion-label>{{ todolist.title }}  </ion-label>
+        <span>{{ todolist.items.length }} Items</span>
+      </ion-item>
+      <ion-item-options slot="end">
+        <ion-item-option
+          color="light"
+          expandable="true"
+          (click)="renameTodoList(todolist)"
+        >
+          <ion-icon slot="icon-only" name="clipboard"></ion-icon>
+        </ion-item-option>
+        <ion-item-option
+          color="danger"
+          expandable="true"
+          (click)="removeTodoList(todolist)"
+        >
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
