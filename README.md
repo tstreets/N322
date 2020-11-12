@@ -1,4 +1,6 @@
-# N322 Course Projects
+# Tabletop Lobby
 
-## [Homework 1](https://in-info-web4.informatics.iupui.edu/~tstreets/)
+## [Website](https://in-info-web4.informatics.iupui.edu/~tstreets/)
 https://in-info-web4.informatics.iupui.edu/~tstreets/
+
+
