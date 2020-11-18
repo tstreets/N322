@@ -1,4 +1,4 @@
-# Scheduling App
+# Simple Shifts
 
 ## [Website](https://in-info-web4.informatics.iupui.edu/~tstreets/322)
 https://in-info-web4.informatics.iupui.edu/~tstreets/322
