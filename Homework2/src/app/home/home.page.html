@@ -1,0 +1,18 @@
+<ion-header>
+    <ion-toolbar color="secondary">
+      <ion-title>
+          Food Categories
+      </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-card *ngFor="let category of mealService.categoryList" routerLink="/category/{{category.strCategory}}">
+        <ion-card-header>
+            <ion-card-title>{{ category.strCategory }}</ion-card-title>
+        </ion-card-header>
+        <img src="{{ category.strCategoryThumb }}">
+    </ion-card>
+
+</ion-content>

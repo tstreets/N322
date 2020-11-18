@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{category}}</ion-title>
+    <ion-buttons>
+      <ion-button routerLink="/" routerDirection="back">Back</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let meal of mealService.categoryItems" routerLink="/meal/{{meal.idMeal}}">
+    <ion-card-header>
+        <ion-card-title>{{ meal.strMeal }}</ion-card-title>
+    </ion-card-header>
+    <img src="{{ meal.strMealThumb }}">
+  </ion-card>
+</ion-content>
