@@ -9,4 +9,8 @@ export class HomePage {
 
   constructor() {}
 
+  public getData():void {
+    console.log('Get Data');
+  }
+
 }
