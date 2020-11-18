@@ -1,5 +1,7 @@
 {
   "name": "SimpleShifts",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
