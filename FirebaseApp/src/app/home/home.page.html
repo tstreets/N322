@@ -8,4 +8,22 @@
 
 <ion-content>
   <ion-button expand='block' (click)='getData()'>Get Data</ion-button>
+  
+  <ion-item>
+    <ion-label position="floating">Name</ion-label>
+    <ion-input class='user_name' name='name' type="text"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating">Age</ion-label>
+    <ion-input class='user_age' name='age' type="text"></ion-input>
+  </ion-item>
+  
+  <ion-button expand='block' (click)='addData()'>Add Data</ion-button>
+
+  <ion-list>
+    <ion-item *ngFor='let user of modelService.users'>
+      {{ user.name }} - {{ user.age }}
+    </ion-item>
+  </ion-list>
 </ion-content>
