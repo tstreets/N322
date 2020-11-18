@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Weekly Schedule</ion-title>
+    <ion-buttons slot='start'>
+      <ion-button routerLink='/login' routerDirection='back'>Logout</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <div class='week'>
+
+    <div class='week__row'>
+
+      <div class='week__col'></div>
+      <div class='week__col' *ngFor='let hour of weekSchedule.hours'>{{hour}}</div>
+
+    </div>
+
+    <div class='week__row' *ngFor='let day of weekSchedule.days'>
+
+      <div class='week__col'>{{day}}</div>
+      <div class='week__col' *ngFor='let hour of weekSchedule.hours'></div>
+
+    </div>
+
+  </div>
+
+</ion-content>
