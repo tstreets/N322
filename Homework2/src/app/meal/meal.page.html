@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <span *ngFor="let meal of mealService.meal">{{ meal.strMeal }}</span>
+      <span *ngIf="!mealService.meal">Meal 404</span>
+    </ion-title>
+    <ion-buttons>
+      <ion-button *ngIf="!mealService.meal" routerLink="/" routerDirection="back">Back</ion-button>
+      <ion-button *ngFor="let meal of mealService.meal" routerLink="/category/{{meal.strCategory}}" routerDirection="back">Back</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="meal" *ngIf="!mealService.meal">
+    <h2>Sorry, we had trouble finding your meal.</h2>
+    <p>Please refresh the page to try again. If problem persists, go back to the home page.</p>
+    <ion-button routerLink="/" routerDirection="back">Go Home</ion-button>
+  </div>
+
+  <div class="meal" *ngFor="let meal of mealService.meal">
+    <h2>{{ meal.strMeal }}</h2>
+    <p>{{ meal.strArea }} <span *ngIf="meal.strTags">| {{ meal.strTags }}</span></p>
+    <img src="{{ meal.strMealThumb}}">
+    <h3>Ingredients</h3>
+    <ul>
+      <div *ngFor="let ingredient of ingredients">
+        <li *ngIf="meal[ingredient.name]">
+          {{ meal[ingredient.name] }} - {{ meal[ingredient.size] }}
+        </li>
+      </div>
+    </ul>
+    <h3>Meal Instructions</h3>
+    <p>{{ meal.strInstructions }}</p>
+    <h3 class="meal__link"><ion-icon name="logo-youtube"></ion-icon><a href="{{ meal.strYoutube }}" target="_blank">Instructional Video<ion-icon name="arrow-up-circle-outline"></ion-icon></a></h3>
+  </div>
+
+</ion-content>
