@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ScheduleServicesService } from '../services/schedule-services.service';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
-  constructor() { }
+  constructor(public scheduleService: ScheduleServicesService) {
+  }
 
   ngOnInit() {
   }

@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Signup</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <form id='signup-form'>
+      <ion-item>
+        <ion-label position='floating'>Email</ion-label>
+        <ion-input name='email' id='signup-email'></ion-input>
+      </ion-item>
+      <div class='input__feedback' id='signup-email-feedback'>Please enter your email.</div>
+
+      <ion-item>
+        <ion-label position='floating'>Password</ion-label>
+        <ion-input name='password' type='password' id='signup-password'></ion-input>
+      </ion-item>
+      <div class='input__feedback' id='signup-password-feedback'>Please enter a password.</div>
+    </form>
+
+
+    <div class="buttons">
+      <ion-button fill='solid' (click)='this.scheduleService.signupUser()'>Signup</ion-button>
+      <a class='buttons--right' routerLink='/login' routerDirection='back'>
+        <em>Already have an account?</em>
+      </a>
+    </div>
+
+</ion-content>

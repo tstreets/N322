@@ -5,5 +5,26 @@
 </ion-header>
 
 <ion-content>
-    <ion-button fill='solid' expand='block' routerLink='/week-schedule' routerDirection='forward'>Login</ion-button>
+
+    <form id='login-form'>
+      <ion-item>
+        <ion-label position='floating'>Email</ion-label>
+        <ion-input name='email' id='login-email'></ion-input>
+      </ion-item>
+      <div class='input__feedback' id='login-email-feedback'>Please enter your email.</div>
+
+      <ion-item>
+        <ion-label position='floating'>Password</ion-label>
+        <ion-input name='password' type='password' id='login-password'></ion-input>
+      </ion-item>
+      <div class='input__feedback' id='login-password-feedback'>Please enter your password.</div>
+    </form>
+
+    <div class="buttons">
+      <ion-button fill='solid' (click)='this.scheduleService.loginUser()'>Login</ion-button>
+      <a class='buttons--right' routerLink='/signup'>
+        <em>Need an account?</em>
+      </a>
+    </div>
+
 </ion-content>

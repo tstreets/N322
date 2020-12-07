@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'week-schedule',
     loadChildren: () => import('./week-schedule/week-schedule.module').then( m => m.WeekSchedulePageModule)
   },
+  {
+    path: 'signup',
+    loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
+  },
 ];
 
 @NgModule({
