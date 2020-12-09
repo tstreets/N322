@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="page">
+
+    <form>
+      <ion-item class='input__group'>
+        <ion-label position='floating'>Email</ion-label>
+        
+        <ion-input clearInput *ngIf='!errors.email && !check' [(ngModel)]='email.value' name='email'></ion-input>
+        <ion-input clearInput *ngIf='errors.email && check' class='input--invalid' [(ngModel)]='email.value' name='email'></ion-input>
+        <ion-input clearInput *ngIf='!errors.email && check' class='input--valid' [(ngModel)]='email.value' name='email'></ion-input>
+      </ion-item>
+
+      <div *ngIf='errors.email' class='input__feedback'>{{ email.feedback }}</div>
+
+      
+      <ion-item class='input__group'>
+        <ion-label position='floating'>Password</ion-label>
+
+        <ion-input clearInput *ngIf='!errors.password && !check' [(ngModel)]='password.value' name='password' type='password'></ion-input>
+        <ion-input clearInput *ngIf='errors.password && check' class='input--invalid' [(ngModel)]='password.value' name='password' type='password'></ion-input>
+        <ion-input clearInput *ngIf='!errors.password && check' class='input--valid' [(ngModel)]='password.value' name='password' type='password'></ion-input>
+      </ion-item>
+      
+      <div *ngIf='errors.password' class='input__feedback'>{{ password.feedback }}</div>
+    </form>
+  
+    <div class="buttons">
+      <ion-button fill='solid' (click)='loginUser()'>Login</ion-button>
+      <a class='buttons--right' routerLink='/signup'>
+        <em>Need an account?</em>
+      </a>
+    </div>
+
+  </div>
+
+</ion-content>

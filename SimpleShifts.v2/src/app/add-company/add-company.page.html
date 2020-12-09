@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <a routerDirection='back' routerLink='/' slot='start'>Logout</a>
+    <ion-title>Adding Company</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class='page'>
+
+    <!-- <h1>Add yo company fool</h1> -->
+    <ion-item class='input__group'>
+      <ion-label position='floating'>Company Name</ion-label>
+      <ion-input [(ngModel)]='company.name'></ion-input>
+    </ion-item>
+    
+    <ion-item class='input__group'>
+      <ion-label position='floating'>Owner's Name</ion-label>
+      <ion-input [(ngModel)]='owner.name'></ion-input>
+    </ion-item>
+    
+    
+    
+    <ion-item class='input__group'>
+      <ion-label>Owner's Phone</ion-label>
+      <ion-input class='input--short' placeholder="###" [(ngModel)]='owner.phone.area' maxlength='3'></ion-input>-
+      <ion-input class='input--short' placeholder="###" [(ngModel)]='owner.phone.prefix' maxlength='3'></ion-input>-
+      <ion-input class='input--short' placeholder="####" [(ngModel)]='owner.phone.ending' maxlength='4'></ion-input>
+    </ion-item>
+
+    <div class="buttons">
+      <ion-button (click)='addCompany()'>Add Company</ion-button>
+    </div>
+
+
+  </div>
+
+</ion-content>

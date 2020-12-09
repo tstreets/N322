@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <a routerDirection='back' routerLink='/' slot='start'>Logout</a>
+    <ion-title>Company List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class='page'>
+    <h2 *ngIf='companyList.length'>Choose a company</h2>
+    <ion-list>
+      <ion-item *ngFor='let company of companyList'>
+        <a routerLink='/schedule/{{ company.id }}'>{{ company.name }}</a>
+      </ion-item>
+    </ion-list>
+    
+    <h2>Join a company</h2>
+    <p>Enter the code given to you by your company.</p>
+    <ion-item class='input__group'>
+      <ion-label position='floating'>Code</ion-label>
+      <ion-input *ngIf='!check' [(ngModel)]='code.value' maxlength='4'></ion-input>
+      <ion-input *ngIf='check && error' class='input--invalid' [(ngModel)]='code.value' maxlength='4'></ion-input>
+      <ion-input *ngIf='check && !error' class='input--valid' [(ngModel)]='code.value' maxlength='4'></ion-input>
+    </ion-item>
+    <div *ngIf='error' class='input__feedback'>{{ code.feedback }}</div>
+    <div class="buttons">
+      <ion-button (click)='joinCode()'>Join Company</ion-button>
+    </div>
+
+    <h2>Add your company</h2>
+    <p>Use our Simple Shifts services for your company.</p>
+    <div class="buttons">
+      <ion-button routerLink='/add-company'>Add Company</ion-button>
+    </div>
+  </div>
+</ion-content>

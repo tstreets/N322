@@ -1,0 +1,22 @@
+.input {
+    &--valid {
+        border: 2px solid green;
+    }
+
+    &--invalid {
+        border: 2px solid red;
+    }
+
+    &--short {
+        text-align: center;
+    }
+
+    &__feedback {
+        margin: 8px 0;
+        color: red;
+    }
+
+    &__group {
+        margin-left: -20px;
+    }
+}
